@@ -1,11 +1,82 @@
-/*
-Theme Name: NathalieMph
-Theme URI: https://monte-graph.eu/
-Author: Shadi AHMAD
-Author URI: https://monte-graph.eu/
-Description: A custom WordPress theme.
-Version: 1.0
-License: GNU General Public License v2 or later
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Text Domain: NathalieMph
-*/
+/* General Header Styles */
+.site-header {
+    background-color: #f8f9fa; /* Light background for the header */
+    padding: 1rem 2rem; /* Margins on the left and right */
+    border-bottom: 1px solid #e0e0e0;
+}
+
+/* Flexbox Alignment */
+.site-header .container {
+    display: flex; /* Makes the logo and menu horizontal */
+    justify-content: space-between; /* Pushes logo left and menu right */
+    align-items: center; /* Vertically aligns items */
+}
+
+/* Logo Styles */
+.site-logo {
+    margin-left: 100px; /* Additional spacing on the left */
+}
+
+.site-logo img {
+    max-height: 20px; /* Adjust logo height */
+    display: block;
+}
+
+/* Navigation Styles */
+.site-nav {
+    margin-right: 100px; /* Additional spacing on the right */
+    display: flex; /* Ensures menu links are in a horizontal row */
+    align-items: center;
+    
+}
+
+.main-menu {
+    display: flex; /* or grid if applicable */
+    gap: 30px; /* Adjust spacing as needed */
+    font-family: 'Space Mono', monospace;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 23.7px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+}
+
+
+.main-menu li {
+    display: inline-block;
+}
+
+.main-menu a {
+    text-decoration: none;
+    color: #000; /* Black color for menu links */
+    font-weight: bold;
+    font-size: 1rem;
+    transition: color 0.3s;
+}
+
+.main-menu a:hover {
+    color: #0073aa; /* WordPress blue for hover */
+}
+
+.hero {
+    position: relative; /* Allows positioning within the container */
+    width: 100%; /* Ensure the section spans the full width */
+    max-height: 100vh; /* Optional: Restrict the section height to the viewport */
+    overflow: hidden; /* Prevents any content spilling out */
+}
+
+.hero img {
+    display: block;
+    width: 100%;
+    height: auto; /* Maintain aspect ratio */
+}
+
+.hero-title {
+    position: absolute; /* Positioning relative to the .hero container */
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Adjust for centering */
+    text-align: center; /* Aligns text or content in the center */
+}
+
