@@ -1,2 +1,5 @@
-<!-- modal -->
-<?php get_template_part('templates_part/modal', 'contact'); ?>
+
+<?php
+// Include the modal contact template part
+get_template_part('template-parts/modal-contact');
+?>
