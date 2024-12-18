@@ -35,7 +35,8 @@ endif;
 </div>
 
 <!-- Bouton pour ouvrir la modale -->
-<button id="open-modal">Ouvrir le contact</button>
+<button id="open-modal">Charger plus</button>
 
 </main>
+<hr class="footer-line">
 <?php get_footer(); ?>

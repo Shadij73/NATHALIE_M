@@ -5,7 +5,6 @@ body {
     line-height: 1.6;
 }
 
-/* Photo Section */
 .photo-container {
     text-align: center;
 }
@@ -22,7 +21,7 @@ body {
 
 /* Header Styles */
 .site-header {
-    background-color: #f8f9fa; /* Light background for the header */
+    background: #f8f9fa;
     padding: 1rem 2rem;
     border-bottom: 1px solid #e0e0e0;
 }
@@ -33,7 +32,6 @@ body {
     align-items: center;
 }
 
-/* Logo Styles */
 .site-logo {
     margin-left: 100px;
 }
@@ -58,8 +56,6 @@ body {
     font-weight: 400;
     line-height: 23.7px;
     text-align: left;
-    text-underline-position: from-font;
-    text-decoration-skip-ink: none;
 }
 
 .main-menu li {
@@ -70,12 +66,11 @@ body {
     text-decoration: none;
     color: #000;
     font-weight: bold;
-    font-size: 1rem;
     transition: color 0.3s;
 }
 
 .main-menu a:hover {
-    color: #0073aa; /* WordPress blue for hover */
+    color: #0073aa;
 }
 
 /* Hero Section */
@@ -87,7 +82,6 @@ body {
 }
 
 .hero img {
-    display: block;
     width: 100%;
     height: auto;
 }
@@ -98,6 +92,26 @@ body {
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
+}
+
+/* Modal Styles */
+#open-modal {
+    display: block; /* Make it a block-level element */
+    margin: 20px auto; /* Center the button horizontally */
+    padding: 20px 40px;
+    font-family: 'Space Mono', monospace;
+    font-size: 16px;
+    font-weight: 400;
+    background-color: #D8D8D8;
+    color: #000000;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+}
+
+#open-modal:hover {
+    background-color: #af93dc; /* Darker hover effect */
 }
 
 .modal {
@@ -113,7 +127,7 @@ body {
 }
 
 .modal-content {
-    background-color: #7e739b;
+    background-color: #fff;
     margin: 10% auto;
     padding: 20px;
     border: 1px solid #ccc;
@@ -128,4 +142,44 @@ body {
     right: 15px;
     font-size: 20px;
     cursor: pointer;
+    color: #fff;
+}
+
+/* Footer Styles */
+.site-footer {
+    background: #fff;
+    color: #000;
+    text-align: center;
+    padding: 20px 0;
+    font-family: 'Space Mono', monospace;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 23.7px;
+    text-transform: uppercase;
+
+}
+
+.footer-menu {
+    display: flex;
+    justify-content: center;
+    gap: 35px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.footer-menu a {
+    color: #000;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-menu a:hover {
+    color: #0073aa;
+}
+
+.footer-line {
+    border: 0;
+    height: 1px;
+    background-color: #000; /* Color of the line */
 }
