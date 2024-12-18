@@ -1,21 +1,45 @@
 <?php get_header(); ?>
-<div class="main single">
-<?php if (have_posts()) : ?>
-<?php while (have_posts()) : the_post(); ?>
-<div class="post">
-<h1 class="post-title"><?php the_title(); ?></h1>
-<p class="post-info">
-Posté le <?php the_date(); ?> dans <?php the_category(', '); ?> par <?php the_author(); ?>.
-</p>
-<div class="post-content">
-<?php the_content(); ?>
+
+<div class="photo-container">
+    <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+        <h1><?php the_title(); ?></h1>
+        <div class="photo">
+            <?php the_post_thumbnail('large'); ?>
+        </div>
+        <div class="photo-description">
+            <?php the_content(); ?>
+        </div>
+    <?php endwhile; endif; ?>
 </div>
-<div class="post-comments">
-<?php comments_template(); ?>
+
+<div class="navigation">
+    <?php 
+    // Navigation entre les photos
+    previous_post_link('<div class="prev">%link</div>', 'Previous: %title'); 
+    next_post_link('<div class="next">%link</div>', 'Next: %title'); 
+    ?>
 </div>
+
+<div class="related-photos">
+    <h2>Photos Apparentées</h2>
+    <?php
+    // Afficher les photos apparentées
+    $related = new WP_Query([
+        'post_type' => 'photo', 
+        'posts_per_page' => 6, 
+        'post__not_in' => array(get_the_ID())
+    ]);
+    if($related->have_posts()):
+        while($related->have_posts()): $related->the_post(); ?>
+            <div class="related-photo">
+                <a href="<?php the_permalink(); ?>">
+                    <?php the_post_thumbnail('thumbnail'); ?>
+                </a>
+            </div>
+        <?php endwhile;
+        wp_reset_postdata();
+    endif;
+    ?>
 </div>
-<?php endwhile; ?>
-<?php endif; ?>
-</div>
-<?php get_sidebar(); ?>
+
 <?php get_footer(); ?>

@@ -18,3 +18,13 @@ jQuery(document).ready(function ($) {
         $(this).fadeOut();
     });
 });
+
+
+jQuery(document).ready(function($) {
+    $('#open-modal').on('click', function() {
+        $('.modal').fadeIn();
+    });
+    $('.modal-close, .modal').on('click', function() {
+        $('.modal').fadeOut();
+    });
+});
