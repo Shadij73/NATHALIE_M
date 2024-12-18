@@ -2,13 +2,25 @@
 
 <div class="photo-container">
     <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+        <div class="entete-single">
+            <div class="photo-details" >
+
         <h1><?php the_title(); ?></h1>
-        <div class="photo">
-            <?php the_post_thumbnail('large'); ?>
-        </div>
+        
         <div class="photo-description">
-            <?php the_content(); ?>
-        </div>
+
+    <?php $field=get_field("type");
+    if ($field) {echo "<p> type : ".$field."</p>";}
+    ?>
+    </div>
+       </div>
+       <div class="photo-image">
+      
+            <?php the_post_thumbnail('large'); ?>
+     
+       </div>
+    </div>
+    
     <?php endwhile; endif; ?>
 </div>
 

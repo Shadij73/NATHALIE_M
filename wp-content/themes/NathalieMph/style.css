@@ -10,6 +10,11 @@ body {
     text-align: center;
 }
 
+.entete-single {
+    display: flex;
+    flex-direction: row;
+}
+
 .related-photo {
     display: inline-block;
     margin: 10px;

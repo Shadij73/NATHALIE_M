@@ -37,19 +37,7 @@
         </div>
     </header>
 
-   <!-- Hero Image Section (below the header) -->
-<div class="hero">
-    <img 
-        src="<?php echo esc_url(get_template_directory_uri() . '/images/nathalie-11.jpeg'); ?>" 
-        alt="<?php echo esc_attr(sprintf(__('Hero Image for %s', 'text-domain'), get_bloginfo('name'))); ?>"
-    >
-    <div class="hero-title">
-        <img 
-            src="<?php echo esc_url(get_template_directory_uri() . '/images/Titre header.png'); ?>" 
-            alt="<?php echo esc_attr(sprintf(__('Hero title for %s', 'text-domain'), get_bloginfo('name'))); ?>"
-        >
-    </div>
-</div>
+  
 
     
 
