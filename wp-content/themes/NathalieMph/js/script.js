@@ -4,11 +4,13 @@ jQuery(document).ready(function ($) {
         let filters = $(this).serialize();
         $.get('/wp-json/nathalie-mota/v1/filter-photos', filters, function (data) {
             $('#photo-catalog').html(data.html);
+        }).fail(function () {
+            console.error('Failed to fetch filtered photos.');
         });
     });
 
     // Lightbox functionality
-    $('.lightbox-trigger').on('click', function () {
+    $(document).on('click', '.lightbox-trigger', function () {
         let src = $(this).data('src');
         $('#lightbox img').attr('src', src);
         $('#lightbox').fadeIn();
@@ -17,21 +19,21 @@ jQuery(document).ready(function ($) {
     $('#lightbox').on('click', function () {
         $(this).fadeOut();
     });
-});
 
-
-jQuery(document).ready(function($) {
-    $('#open-modal').on('click', function() {
+    // Modal functionality
+    $('#open-modal').on('click', function () {
         $('.modal').fadeIn();
     });
-    $('.modal-close, .modal').on('click', function() {
-        $('.modal').fadeOut();
-    });
-});
 
-jQuery(document).ready(function($) {
-    let page = 2; // Next page
-    $('#load-more').click(function() {
+    $(document).on('click', '.modal-close, .modal', function (e) {
+        if ($(e.target).is('.modal') || $(e.target).is('.modal-close')) {
+            $('.modal').fadeOut();
+        }
+    });
+
+    // Load more photos
+    let page = 2; // Next page for loading more photos
+    $('#load-more').on('click', function () {
         $.ajax({
             url: ajaxurl,
             type: 'POST',
@@ -39,9 +41,12 @@ jQuery(document).ready(function($) {
                 action: 'load_more_photos',
                 page: page
             },
-            success: function(data) {
+            success: function (data) {
                 $('.photo-gallery').append(data);
                 page++;
+            },
+            error: function () {
+                console.error('Failed to load more photos.');
             }
         });
     });

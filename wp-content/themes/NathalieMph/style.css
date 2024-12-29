@@ -184,3 +184,29 @@ s
     background-color: #000; /* Color of the line */
 }
 
+
+.photo-container{
+    display: flex;
+    flex-direction: row;
+
+}
+
+.photo-image {
+    padding-left: 300px;
+}
+
+.photo-details {
+    
+    padding-top: 500px;
+    padding-left: 30px;
+    font-family: 'Space Mono', monospace; /* Added fallback font */
+    font-size: 27px;
+    font-style: italic;
+    font-weight: 400;
+    line-height: 58px;
+    text-align: left;
+    text-transform: uppercase; /* Ensures title is in capital letters */
+    text-decoration-skip-ink: none;
+
+}
+
