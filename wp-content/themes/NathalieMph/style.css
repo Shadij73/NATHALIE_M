@@ -68,7 +68,7 @@ body {
     font-weight: bold;
     transition: color 0.3s;
 }
-
+s
 .main-menu a:hover {
     color: #0073aa;
 }
@@ -183,3 +183,4 @@ body {
     height: 1px;
     background-color: #000; /* Color of the line */
 }
+

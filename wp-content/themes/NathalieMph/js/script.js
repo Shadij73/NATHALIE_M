@@ -28,3 +28,21 @@ jQuery(document).ready(function($) {
         $('.modal').fadeOut();
     });
 });
+
+jQuery(document).ready(function($) {
+    let page = 2; // Next page
+    $('#load-more').click(function() {
+        $.ajax({
+            url: ajaxurl,
+            type: 'POST',
+            data: {
+                action: 'load_more_photos',
+                page: page
+            },
+            success: function(data) {
+                $('.photo-gallery').append(data);
+                page++;
+            }
+        });
+    });
+});
