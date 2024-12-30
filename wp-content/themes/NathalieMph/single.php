@@ -8,9 +8,22 @@
         <h1><?php the_title(); ?></h1>
         
         <div class="photo-description">
-
-    <?php $field=get_field("type");
+        <?php $field=get_field("reference");
+    if ($field) {echo "<p> Référence : ".$field."</p>";}
+    ?>
+   
+     <?php $field=get_field("categorie");
+    if ($field) {echo "<p> Catégorie : ".$field."</p>";}
+    ?>
+    
+     <?php $field=get_field("format");
+    if ($field) {echo "<p> Format : ".$field."</p>";}
+    ?>
+     <?php $field=get_field("type");
     if ($field) {echo "<p> type : ".$field."</p>";}
+    ?>
+     <?php $field=get_the_date("Y");
+    if ($field) {echo "<p> Année : ".$field."</p>";}
     ?>
     </div>
        </div>

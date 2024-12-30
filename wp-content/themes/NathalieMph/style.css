@@ -184,29 +184,56 @@ s
     background-color: #000; /* Color of the line */
 }
 
-
-.photo-container{
+.photo-container {
     display: flex;
     flex-direction: row;
-
+    justify-content: space-between; /* Ensures space between text and photo */
+    align-items: center; /* Vertically aligns content */
+    flex-wrap: wrap; /* Allows wrapping for smaller screens */
+    padding: 20px; /* Adds some padding around the container */
 }
 
 .photo-image {
-    padding-left: 300px;
+    width: 40%; /* Sets the image to take 40% of the container width */
+    height: auto; /* Maintains the aspect ratio */
+    margin-left: auto; /* Pushes the image to the right */
 }
 
 .photo-details {
-    
-    padding-top: 500px;
-    padding-left: 30px;
-    font-family: 'Space Mono', monospace; /* Added fallback font */
-    font-size: 27px;
+    width: 50%; /* Ensures the text takes 50% of the container width */
+    padding: 40px 20px; /* Adds consistent padding around the text */
+    margin-top: 50px; /* Moves the title down */
+    font-family: 'Space Mono', monospace;
+    font-size: 1.5rem; /* Adjusted font size for better responsiveness */
     font-style: italic;
     font-weight: 400;
-    line-height: 58px;
+    line-height: 1.5; /* Adjusts line spacing */
     text-align: left;
-    text-transform: uppercase; /* Ensures title is in capital letters */
+    text-transform: uppercase;
     text-decoration-skip-ink: none;
-
 }
 
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    .photo-container {
+        flex-direction: column; /* Stacks the text and photo vertically */
+        align-items: center; /* Centers content for smaller screens */
+    }
+
+    .photo-image, .photo-details {
+        width: 100%; /* Takes full width on smaller screens */
+        text-align: center; /* Centers the text for better readability */
+    }
+
+    .photo-details {
+        margin-top: 30px; /* Adjusts margin for smaller screens */
+        font-size: 1.2rem; /* Reduces font size for smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .photo-details {
+        margin-top: 20px; /* Further adjusts margin for very small screens */
+        font-size: 1rem; /* Further reduces font size for very small screens */
+    }
+}
