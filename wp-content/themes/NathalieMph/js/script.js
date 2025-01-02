@@ -20,16 +20,20 @@ jQuery(document).ready(function ($) {
         $(this).fadeOut();
     });
 
-    // Modal functionality
-    $('#open-modal').on('click', function () {
+  // Modal functionality
+$(document).ready(function() {
+    $('#open-modal, #menu-item-110').on('click', function () {
         $('.modal').fadeIn();
+        $('body').css('overflow', 'hidden'); // Prevent background scrolling
     });
 
     $(document).on('click', '.modal-close, .modal', function (e) {
         if ($(e.target).is('.modal') || $(e.target).is('.modal-close')) {
             $('.modal').fadeOut();
+            $('body').css('overflow', ''); // Restore background scrolling
         }
     });
+});
 
     // Load more photos
     let page = 2; // Next page for loading more photos
