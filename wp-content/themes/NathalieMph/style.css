@@ -1,25 +1,12 @@
-/* General Styles */
+/* ========== General Styles ========== */
 body {
     margin: 0;
     font-family: Arial, sans-serif;
     line-height: 1.6;
+    color: #333;
 }
 
-.photo-container {
-    text-align: center;
-}
-
-.entete-single {
-    display: flex;
-    flex-direction: row;
-}
-
-.related-photo {
-    display: inline-block;
-    margin: 10px;
-}
-
-/* Header Styles */
+/* ========== Header Styles ========== */
 .site-header {
     background: #f8f9fa;
     padding: 1rem 2rem;
@@ -37,11 +24,11 @@ body {
 }
 
 .site-logo img {
-    max-height: 20px;
+    max-height: 40px;
     display: block;
 }
 
-/* Navigation Styles */
+/* ========== Navigation Styles ========== */
 .site-nav {
     margin-right: 100px;
     display: flex;
@@ -50,12 +37,14 @@ body {
 
 .main-menu {
     display: flex;
-    gap: 30px;
+    gap: 20px;
     font-family: 'Space Mono', monospace;
     font-size: 16px;
-    font-weight: 400;
-    line-height: 23.7px;
+    font-weight: 500;
     text-align: left;
+    list-style: none;
+    padding: 0;
+    margin: 0;
 }
 
 .main-menu li {
@@ -68,12 +57,12 @@ body {
     font-weight: bold;
     transition: color 0.3s;
 }
-s
+
 .main-menu a:hover {
     color: #0073aa;
 }
 
-/* Hero Section */
+/* ========== Hero Section ========== */
 .hero {
     position: relative;
     width: 100%;
@@ -92,77 +81,177 @@ s
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
+    font-size: 2rem;
+    color: #fff;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 10px 20px;
+    border-radius: 5px;
 }
 
-/* Modal Styles */
+/* ========== Modal Styles ========== */
+/* Trigger Button Styles */
 #open-modal {
-    display: block; /* Make it a block-level element */
-    margin: 20px auto; /* Center the button horizontally */
-    padding: 20px 40px;
+    display: block;
+    margin: 0 auto; /* Center the button horizontally */
+    padding: 20px 50px;
     font-family: 'Space Mono', monospace;
-    font-size: 16px;
-    font-weight: 400;
+    font-size: 20px;
     background-color: #D8D8D8;
-    color: #000000;
+    color: #000;
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    text-transform: uppercase;
     text-align: center;
 }
 
 #open-modal:hover {
-    background-color: #af93dc; /* Darker hover effect */
+    background-color: #af93dc;
 }
 
+/* Modal Overlay */
 .modal {
     position: fixed;
-    z-index: 1000;
-    left: 0;
     top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
-    overflow: auto;
-    background-color: rgba(0, 0, 0, 0.5); /* Background overlay */
+    background: rgba(0, 0, 0, 0.8); /* Semi-transparent black background */
     display: none; /* Hidden by default */
+    z-index: 9999;
 }
 
+/* Modal Content Centering with Margin */
 .modal-content {
-    background-color: #fff;
-    margin: 10% auto;
-    padding: 20px;
-    border: 1px solid #ccc;
-    width: 50%; /* Adjust modal width */
-    position: relative;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    position: absolute; /* Position the modal absolutely within the viewport */
+    top: 50%; /* Move the modal down 50% of the viewport height */
+    left: 50%; /* Move the modal right 50% of the viewport width */
+    transform: translate(-50%, -50%); /* Offset the modal back by half its height and width */
+    background: #fff;
+    padding: 40px 30px;
+    border-radius: 8px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+    max-width: 500px;
+    width: 90%;
+    display: flex;
+    flex-direction: column; /* Stack child elements vertically */
 }
 
+/* Form Styling */
+.modal-content label {
+    font-size: 1rem;
+    font-weight: bold;
+    margin-bottom: 8px;
+    align-self: flex-start; /* Align labels to the left of the modal */
+    color: #333;
+}
+
+.modal-input,
+.modal-textarea {
+    width: 100%; /* Ensure inputs span the full width of the modal */
+    margin-bottom: 20px;
+    padding: 12px 15px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    background: #fff;
+}
+
+/* Textarea */
+.modal-textarea {
+    height: 100px;
+    resize: none;
+}
+
+/* Submit Button */
+.modal-submit {
+    width: 100%;
+    padding: 12px 15px;
+    font-size: 1rem;
+    background: #d8d8d8;
+    color: #000;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.modal-submit:hover {
+    background: #af93dc;
+}
+
+/* Close Button */
 .modal-close {
     position: absolute;
     top: 10px;
-    right: 15px;
-    font-size: 20px;
+    right: 10px;
+    font-size: 1.5rem;
     cursor: pointer;
-    color: #fff;
+    color: #333;
+    font-weight: bold;
+    z-index: 2; /* Ensure it's above the content */
 }
 
-/* Footer Styles */
+.modal-close:hover {
+    color: red;
+}
+
+/* Close Button */
+.modal-close {
+    display: none; /* Hides the close button */
+}
+
+
+.modal-input, .modal-textarea {
+    width: 100%;
+    margin-bottom: 15px;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.modal-textarea {
+    height: 80px;
+    resize: none;
+}
+
+.modal-submit {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    background: #0073aa;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.modal-submit:hover {
+    background: #005f8a;
+}
+
+/* ========== Footer Styles ========== */
 .site-footer {
-    background: #fff;
-    color: #000;
+    background: #f8f9fa;
+    color: #333;
     text-align: center;
     padding: 20px 0;
     font-family: 'Space Mono', monospace;
     font-size: 16px;
     font-weight: 400;
-    line-height: 23.7px;
     text-transform: uppercase;
-
 }
 
 .footer-menu {
     display: flex;
     justify-content: center;
-    gap: 35px;
+    gap: 20px;
     list-style: none;
     margin: 0;
     padding: 0;
@@ -178,62 +267,61 @@ s
     color: #0073aa;
 }
 
-.footer-line {
-    border: 0;
-    height: 1px;
-    background-color: #000; /* Color of the line */
-}
-
+/* ========== Photo Section ========== */
 .photo-container {
     display: flex;
-    flex-direction: row;
-    justify-content: space-between; /* Ensures space between text and photo */
-    align-items: center; /* Vertically aligns content */
-    flex-wrap: wrap; /* Allows wrapping for smaller screens */
-    padding: 20px; /* Adds some padding around the container */
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
 }
 
 .photo-image {
-    width: 40%; /* Sets the image to take 40% of the container width */
-    height: auto; /* Maintains the aspect ratio */
-    margin-left: auto; /* Pushes the image to the right */
+    width: 45%;
+    height: auto;
+    margin-bottom: 20px;
 }
 
 .photo-details {
-    width: 50%; /* Ensures the text takes 50% of the container width */
-    padding: 40px 20px; /* Adds consistent padding around the text */
-    margin-top: 50px; /* Moves the title down */
+    width: 45%;
     font-family: 'Space Mono', monospace;
-    font-size: 1.5rem; /* Adjusted font size for better responsiveness */
-    font-style: italic;
-    font-weight: 400;
-    line-height: 1.5; /* Adjusts line spacing */
+    font-size: 1.2rem;
+    line-height: 1.5;
     text-align: left;
     text-transform: uppercase;
-    text-decoration-skip-ink: none;
 }
 
-/* Media Queries for Responsiveness */
+/* ========== Media Queries ========== */
 @media (max-width: 768px) {
     .photo-container {
-        flex-direction: column; /* Stacks the text and photo vertically */
-        align-items: center; /* Centers content for smaller screens */
+        flex-direction: column;
+        align-items: center;
     }
 
     .photo-image, .photo-details {
-        width: 100%; /* Takes full width on smaller screens */
-        text-align: center; /* Centers the text for better readability */
+        width: 100%;
     }
 
     .photo-details {
-        margin-top: 30px; /* Adjusts margin for smaller screens */
-        font-size: 1.2rem; /* Reduces font size for smaller screens */
+        margin-top: 20px;
+        font-size: 1rem;
+    }
+
+    .hero-title {
+        font-size: 1.5rem;
     }
 }
 
 @media (max-width: 480px) {
+    .modal-content {
+        padding: 20px;
+    }
+
+    .modal-header {
+        font-size: 2rem;
+    }
+
     .photo-details {
-        margin-top: 20px; /* Further adjusts margin for very small screens */
-        font-size: 1rem; /* Further reduces font size for very small screens */
+        font-size: 0.9rem;
     }
 }

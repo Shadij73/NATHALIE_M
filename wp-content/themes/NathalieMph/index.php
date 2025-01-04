@@ -60,17 +60,32 @@ if (have_posts()) :
 endif;
 ?>
 
-<!-- Modal de Contact -->
-<div class="modal" id="contact-modal" style="display:none;">
-    <div class="modal-content">
-        <span class="modal-close" style="float:right; cursor:pointer;">&times;</span>
-        <h2><?php _e('Contactez-nous', 'text-domain'); ?></h2>
-        <?php echo do_shortcode('[contact-form-7 id="your_form_id" title="Formulaire de contact"]'); ?>
-    </div>
+<!-- Trigger Button -->
+<button id="open-modal">Contact</button>
+
+<!-- Modal Structure -->
+<div class="modal">
+  <div class="modal-content">
+    <div class="modal-header">CONTACTCONTACTCONTACT</div>
+    <form>
+      <label for="name">Nom</label>
+      <input type="text" id="name" class="modal-input" placeholder="Nom" required>
+
+      <label for="email">E-mail</label>
+      <input type="email" id="email" class="modal-input" placeholder="E-mail" required>
+
+      <label for="photo-ref">Réf. Photo</label>
+      <input type="text" id="photo-ref" class="modal-input" placeholder="Réf. Photo">
+
+      <label for="message">Message</label>
+      <textarea id="message" class="modal-textarea" placeholder="Message"></textarea>
+
+      <button type="submit" class="modal-submit">Envoyer</button>
+    </form>
+    <span class="modal-close">&times;</span>
+  </div>
 </div>
 
-<!-- Button to Open Modal -->
-<button id="open-modal"><?php _e('Contactez-nous', 'text-domain'); ?></button>
 
 </main>
 <hr class="footer-line">
