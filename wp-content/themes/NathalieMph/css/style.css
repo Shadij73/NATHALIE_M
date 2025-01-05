@@ -1,0 +1,180 @@
+/* ========== General Styles ========== */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+}
+
+/* ========== Header Styles ========== */
+.site-header {
+    background: #f8f9fa;
+    padding: 1rem 2rem;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.site-header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.site-logo {
+    margin-left: 100px;
+}
+
+.site-logo img {
+    max-height: 40px;
+    display: block;
+}
+
+/* ========== Navigation Styles ========== */
+.site-nav {
+    margin-right: 100px;
+    display: flex;
+    align-items: center;
+}
+
+.main-menu {
+    display: flex;
+    gap: 20px;
+    font-family: 'Space Mono', monospace;
+    font-size: 16px;
+    font-weight: 500;
+    text-align: left;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.main-menu li {
+    display: inline-block;
+}
+
+.main-menu a {
+    text-decoration: none;
+    color: #000;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.main-menu a:hover {
+    color: #0073aa;
+}
+
+/* ========== Hero Section ========== */
+.hero {
+    position: relative;
+    width: 100%;
+    max-height: 100vh;
+    overflow: hidden;
+}
+
+.hero img {
+    width: 100%;
+    height: auto;
+}
+
+.hero-title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    font-size: 2rem;
+    color: #fff;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+
+/* ========== Footer Styles ========== */
+.site-footer {
+    background: #f8f9fa;
+    color: #333;
+    text-align: center;
+    padding: 20px 0;
+    font-family: 'Space Mono', monospace;
+    font-size: 16px;
+    font-weight: 400;
+    text-transform: uppercase;
+}
+
+.footer-menu {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.footer-menu a {
+    color: #000;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-menu a:hover {
+    color: #0073aa;
+}
+
+/* ========== Photo Section ========== */
+.photo-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+.photo-image {
+    width: 45%;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.photo-details {
+    width: 45%;
+    font-family: 'Space Mono', monospace;
+    font-size: 1.2rem;
+    line-height: 1.5;
+    text-align: left;
+    text-transform: uppercase;
+}
+
+/* ========== Media Queries ========== */
+@media (max-width: 768px) {
+    .photo-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .photo-image, .photo-details {
+        width: 100%;
+    }
+
+    .photo-details {
+        margin-top: 20px;
+        font-size: 1rem;
+    }
+
+    .hero-title {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .modal-content {
+        padding: 20px;
+    }
+
+    .modal-header {
+        font-size: 2rem;
+    }
+
+    .photo-details {
+        font-size: 0.9rem;
+    }
+}
