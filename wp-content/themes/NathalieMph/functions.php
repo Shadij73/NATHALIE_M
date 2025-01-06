@@ -17,6 +17,17 @@ function nathaliemph_enqueue_assets() {
         wp_get_theme()->get('Version') // Automatically uses theme version for cache busting
     );
 
+    // Theme CSS
+
+    wp_enqueue_style(
+        'nathaliemph-theme-style',
+        get_template_directory_uri() . '/css/style.css' // Theme CSS file
+    );
+    wp_enqueue_style(
+        'nathaliemph-modal-style',
+        get_template_directory_uri() . '/css/modal.css' // Modal CSS file
+    );
+
     // Theme JavaScript
     wp_enqueue_script(
         'nathaliemph-script', 
@@ -39,16 +50,6 @@ function nathaliemph_enqueue_assets() {
         true // Load in the footer
     );
 
-    // Theme CSS
-
-    wp_enqueue_style(
-        'nathaliemph-theme-style',
-        get_template_directory_uri() . '/css/style.css' // Theme CSS file
-    );
-    wp_enqueue_style(
-        'nathaliemph-modal-style',
-        get_template_directory_uri() . '/css/modal.css' // Modal CSS file
-    );
 
 }
 add_action('wp_enqueue_scripts', 'nathaliemph_enqueue_assets');

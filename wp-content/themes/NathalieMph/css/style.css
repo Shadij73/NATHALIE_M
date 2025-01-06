@@ -123,26 +123,33 @@ body {
 /* ========== Photo Section ========== */
 .photo-container {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between; /* Ensures space between text and photo */
     padding: 20px;
+    max-width: 1200px;
+    margin: auto; /* Centers the container */
 }
 
 .photo-image {
-    width: 45%;
+    width: 50%; /* Adjusts the photo width */
     height: auto;
-    margin-bottom: 20px;
+    margin-left: 5%; /* Adds spacing between text and image */
 }
 
+h1 {
+    font-style: italic;
+}
 .photo-details {
-    width: 45%;
+    width: 40%; /* Adjusts the text width */
     font-family: 'Space Mono', monospace;
     font-size: 1.2rem;
     line-height: 1.5;
     text-align: left;
     text-transform: uppercase;
+    padding: 20px 20px 20px 0; /* Adjusts padding */
 }
+
+
 
 /* ========== Media Queries ========== */
 @media (max-width: 768px) {
